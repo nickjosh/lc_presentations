@@ -1,0 +1,40 @@
+.ft-section(data-title="Loops")
+    .ft-page
+        h1 For Loop
+        p For loops are a bit different in a shell, they operate on a sequence of space-seperated strings.
+        p.ft-fragment See "$IFS" for true delimiter.
+        pre.ft-fragment
+            code.language-bash
+                :code
+                    for x in SEQUENCE; do
+                        SOMETHING
+                    done
+
+    .ft-page
+        h1 For Example
+        pre
+            code.language-bash
+                :code
+                    for x in foo bar baz; do
+                        echo "$x"
+                    done
+
+    .ft-page
+        h1 While Loop
+        pre
+            code.language-bash
+                :code
+                    for x in SEQUENCE; do
+                        SOMETHING
+                    done
+
+    .ft-page
+        h1 While Example
+        pre
+            code.language-bash
+                :code
+                    x=0
+                    while [ "$x" -lt 10 ]; do
+                        echo "Hello World"
+                        x=$((x + 1))
+                    done

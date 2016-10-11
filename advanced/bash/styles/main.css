@@ -1,0 +1,20 @@
+.hero {
+	background: #cccccc;
+	border-radius: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.hero img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+* {
+	font-family: 'Roboto', sans-serif	!important;
+}
+
+#fstable th, td {
+	padding: 0;
+	text-align: left;
+}

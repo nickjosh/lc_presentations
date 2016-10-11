@@ -1,0 +1,24 @@
+{
+  "name": "launchcode_os",
+  "version": "1.0.0",
+  "description": "Presentation for LaunchCode, Operating Systems",
+  "main": "index.js",
+  "author": "",
+  "dependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^3.0.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-jade-globbing": "^0.1.9",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}

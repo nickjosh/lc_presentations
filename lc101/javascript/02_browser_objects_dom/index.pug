@@ -1,0 +1,77 @@
+section
+  h1 Javascript
+  h3 02 - Arrays, Objects, and the DOM
+
+section
+  section
+    h2 Arrays
+    p.fragment An array is an ordered collection of references to other types.
+
+  section
+    h2 Array Example
+    pre
+      code.javascript.
+        var arr = [];
+
+        // Add item to end (PUSH)
+        arr.push('hello');
+        console.log(arr);
+
+        // Get length of array
+        console.log(arr.length);
+
+        // Pop item off end
+        var item = arr.pop();
+        console.log(item);
+        console.log(arr.length);
+
+section
+  section
+    h2 Objects
+    p.fragment Objects are like classes in other languages. Not everything is the same though.
+
+  section
+    h2 Objects are Key - Value pairs
+    p.fragment Objects can be though of as a map from a key to a value. Much like a dictionary in Python.
+    pre.fragment
+      code.javascript.
+        var someObj = {
+          hello: 'World',
+          foo: 'bar',
+        };
+
+        console.log(someObj['hello']);
+        console.log(someObj['abc']);
+
+  section
+    h2 Objects as Classes
+    p.fragment Objects can also act like a class
+    pre.fragment
+      code.javascript.
+        function Rectangle(width, height) {
+          this.width = width;
+          this.height = height;
+          
+          this.area = function () {
+            return this.width * this.height;
+          };
+        }
+
+        var exampleRect = new Rectangle(10, 5);
+        console.log(example.area());
+    
+    p.fragment ES6 Makes this much better.
+
+
+section
+  section
+    h2 The DOM
+    h4 Document Object Model
+    p.fragment Each HTML document can be represented as an object.
+    p.fragment Each node has many methods for navigating and modifying the DOM tree.
+
+
+section
+  h1 Studio: Mario 2
+    
+

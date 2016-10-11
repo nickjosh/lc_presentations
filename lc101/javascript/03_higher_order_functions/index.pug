@@ -1,0 +1,94 @@
+section
+  h1 Javascript
+  h3 03 - Higher Order Functions / DOM Events
+
+  h4 Announcements
+  ul
+    li Thursday, between sessions, Apprenticeship Program 
+    li Resume Workshop Tuesday, October 25th
+
+section
+  section
+    h2 Elegant, Understandable Code
+    p Writing code for yourself or a team requires that you write understandable code.
+    | If you forget what you did or someone else has to work with your code it is necessary that you can see what it is doing.
+
+  section
+    h2 Functional Programming in JS
+    p Functional programming is often sited as producing clearner, easier to understand, and more elegant code.
+    div.fragment
+      h4 Functional Operations on Arrays
+      ul
+        li #[code Array.forEach] (not really from functional programming)
+        li #[code Array.map]
+        li #[code Array.filter]
+        li #[code Array.reduce]
+
+  section
+    h3 Using #[code Array.forEach]
+    p #[code forEach] takes each item in an array and applies a function to it.
+    pre.fragment
+      code.javascript.
+        var arr = ['a', 'b', 'c'];
+        var someFunc = function(x) {
+          console.log(x);
+        };
+
+        arr.forEach(someFunc);
+
+  section
+    h3 Notes on #[code Array.forEach]
+    p The function's return doesn't go anywhere, it just gets thrown away.
+
+  section
+    h3 Using #[code Array.map]
+    p #[code map] applies a function to each element of an array, returning a list of the returned values.
+    pre.fragment
+      code.javascript.
+        var arr = ['hello', 'world'];
+        var capitalize = function(x) {
+          return x[0].toUpperCase() + x.slice(1);
+        }
+
+        console.log(arr.map(capitalize));
+
+  section
+    h3 Using #[code Array.filter]
+    p #[code filter] creates a new array with only those items which, when passed through a function, return true.
+    pre.fragment
+      code.javascript.
+        var arr = [0, 10, 20, -20, -10, -1, 1];
+        console.log(arr.filter(x => x > 0));
+
+  section
+    h3 Using #[code Array.reduce]
+    p #[code reduce] applies a function, from left to right, against an accumulator, to produce a single value.
+    pre.fragment
+      code.javascript.
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var sum = (a, b) { return a + b };
+
+        console.log(arr.reduce(sum));
+
+section
+  section
+    h2 DOM Events
+    p You can register a function, known as a callback, to respond to events trigger by the user.
+  
+  section
+    h2 Using #[code addEventListener]
+    pre
+      code.javascript.
+        target.addEventListener(type, listener[, options]);
+
+        function listenerExample(event) {
+          // Respond to event
+        }
+  
+
+  section
+    h2 Event Types
+    p #[a(href="https://developer.mozilla.org/en-US/docs/Web/Events") MDN].
+
+section
+  h2 Mario 3

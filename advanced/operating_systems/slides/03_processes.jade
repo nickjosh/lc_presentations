@@ -1,0 +1,23 @@
+.ft-section(data-title="Processes")
+    .ft-page
+        h1 Processes
+        p.ft-fragment Each process on a machine gets assigned a PID or Process ID.
+        p.ft-fragment Additionally, each process is spawned from another process and assigned a parent's pid (ppid).
+        p.ft-fragment This means we can think of the set of process on a machine as a tree.
+        pre.ft-fragment
+            code.language-bash pstree
+
+    .ft-page
+        h1 C
+        p Use the following function to get the process id of the calling process.
+        pre.ft-fragment
+            code.language-bash man getpid
+
+    .ft-page
+        h1 Threads and Processes
+        dl
+            dt Process
+            dd An instance of a running program.
+
+            dt Thread
+            dd The smallest schedulable grouping of instructions. (A process can have multiple threads)

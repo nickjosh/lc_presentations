@@ -1,0 +1,96 @@
+.ft-section(data-title='File Systems')
+    .ft-page
+        h1 Linux's File System
+        ul
+            li.ft-fragment The filesystem on Linux is organized as tree.
+            li.ft-fragment The structure is defined by Filesystem Hierarchy Standard 
+                a(href='http://www.linuxfoundation.org/collaborate/workgroups/lsb/fhs') (FHS)
+    .ft-page
+        h1 Structure
+        li.ft-fragment
+            The root structure is as follows:
+            table#fstable(cellspacing="0", cellpadding="0")
+                tr
+                    td /
+                    td root
+                tr
+                    td /bin         
+                    td binaries required for boot
+                tr
+                    td /boot        
+                    td Location of kernel and boot related files
+                tr
+                    td /dev         
+                    td (Psuedo-filesystem) device files
+                tr
+                    td /etc         
+                    td Configuration files
+                tr
+                    td /home        
+                    td Home directories
+                tr
+                    td /lib         
+                    td Libraries
+                tr
+                    td /lib
+                    td qual}   - Archecture specific libraries
+                tr
+                    td /media       
+                    td Mount point for media
+                tr
+                    td /mnt         
+                    td Mount point for media
+                tr
+                    td /opt         
+                    td Optional Packages
+                tr
+                    td /proc        
+                    td (Psuedo-filesystem) Process Filesystem
+                tr
+                    td /root        
+                    td root's home directory
+                tr
+                    td /run         
+                    td Running services info (lockfiles, etc)
+                tr
+                    td /sbin        
+                    td Privileged binaries required for boot
+                tr
+                    td /srv         
+                    td Local Service files (webpages or database files)
+                tr
+                    td /tmp         
+                    td Temporary files
+                tr
+                    td /usr         
+                    td Full userland tools
+                tr
+                    td /var         
+                    td Variables files (logs, etc...)
+
+    .ft-page
+        h1 /dev
+        p The device filesystem contains files which correspond to devices on your system.
+        p.ft-fragment e.g. /dev/sda Is the first serial drive.
+
+    .ft-page
+        h1 /proc
+        p The proc filesystem contains process information
+        p.ft-fragment The command line is stored in /proc/$PID/cmdline
+
+    .ft-page
+        h1 Inodes
+        p Each file and directory is stored in the filesystem as an inode.
+        p.ft-fragment The inode holds metadata about the file or folder.
+        pre.ft-fragment
+            code.languge-bash stat $FILE
+
+    .ft-page
+        h1 Permissions and Ownership
+        p The permissions on a file are stored as a sequence of 9 bits.
+        p.ft-fragment 
+            ol
+                li Owner RWX
+                li Group RWX
+                li Everyone RWX
+        p.ft-fragment The owner and group are stored as IDs along with the file.

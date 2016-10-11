@@ -1,0 +1,91 @@
+section
+  h1 Java
+  h3 05 - Inheritance and GUIs
+
+  h4 Announcements
+  ul
+    li Thursday, Oct 13th, between classes there will be a disucssion of tech résumés.
+
+
+section
+  section
+    h2 Inheritance
+    p.fragment Each class may inherit methods and properties from a parent class.
+    p.fragment This allows you to extend a class with your own methods and properties.
+
+  section
+    h2 Inheritance lingo
+    p To #[strong sub class] a class means to inherit and extend said class. The #[strong sub class] is the class on which the extensions are built.
+    p.fragment The #[strong super class] is the parent class.
+
+  section
+    h2 Inheritance VS Composition
+    p.fragment A class can contain another class but not inherit from it. In the gradebook example a Course contains a Roster (probably an ArrayList instantance.
+
+  section
+    h2 The Power of Polymorphism
+    p.fragment #[strong Polymorphism] is the practice of using a base class and extending it while preserving its super class's capacilities.
+    p.fragment The principale of polymorphicm aids in good class design.
+  section
+    h2 The Power of Polymorphism
+    p Ex: Both phones and laptops may compute, so instead of writing two seperate computer like classes you would probably write one class, called computer, and bother phone and laptop would subclass it.
+  
+  section
+    h2 Polymorphism Example
+    pre
+      code.java.
+        public class Computer {
+          private Integer clock_speed;
+          private Integer core_count;
+          private Integer memory;
+
+          public Computer(Integer clock_speed, Integer core_count, Integer memory) {
+            this.clock_speed = clock_speed;
+            this.core_count = core_count;
+            this.memory = memory;
+          }
+
+          public int add(int a, int b) {
+            // Something using the privat properties...
+            return a + b;
+          }
+        }
+
+        public class Phone extends Computer {
+          private Integer screen_size_x;
+          private Integer screen_size_y;
+          
+          public Phone(Integer clock_speed, Integer core_count, Integer memory, Integer screen_size_x, Integer screen_size_y) {
+            super(clock_speed, core_count, memory);
+          // ... some phone specific methods
+        }
+
+  section
+    h2 Private and Protected
+    table
+      thead
+        tr
+          th Modifier
+          th Class
+          th Package
+          th Subclass
+          th World
+      tbody
+        tr #[td public]      #[td Y] #[td Y] #[td Y] #[td Y]
+        tr #[td protected]   #[td Y] #[td Y] #[td Y] #[td N]
+        tr #[td no modifier] #[td Y] #[td Y] #[td N] #[td N]
+        tr #[td private]     #[td Y] #[td N] #[td N] #[td N]
+
+section
+  section
+    h2 GUIs
+    p.fragment A GUI is a Graphical User Interface.
+    p.fragment In Java, GUI elements are from the Swing toolkit (replaced AWT).
+
+  section
+    h2 Events and Event Handlers
+    p.fragment When an element is activated, a handler class with a method named #[code public void actionPerformed(ActionEvent evt)].
+
+  section
+    h2 Live Example
+

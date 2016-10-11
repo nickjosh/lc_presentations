@@ -1,0 +1,113 @@
+section
+  h1 Java
+  h3 03 - IO and Testing
+
+  h4 Announcements
+  ul
+    li Thursday, between sessions, Apprenticeship Program 
+    li Resume Workshop Tuesday, October 25th
+
+section
+  section
+    h2 IO
+    p Input and output are handled through the #[code java.nio.file] and #[code java.io] classes.
+
+  section
+    h2 Reading Input (Scanner)
+    p The scanner class reads input, converts them to the correct type, and return the content.
+    pre.fragment
+      code.java.
+        import java.util.Scanner;
+        import java.io.*;          // Access System.out
+
+        public class NumericInput
+        {
+          public static void main(String[] args)
+          {
+            // Create a scanner and some variables
+            Scanner in = new Scanner(System.in);
+            int integer;
+            String string;
+           
+            // Read in values  
+            integer = in.nextInt();
+            string = in.nextLine();
+           
+            System.out.println(integer + " " + string);
+          }
+        }
+  
+  section
+    h2 Reading and Writing Files
+    p Reading and writing can be done via many mechanisms. Some are simple and some are complicated.
+
+  section
+    h2 Simple File Reading and Writing
+    p The simplest mechanism is the #[code Files] class.
+    pre.fragment
+      code.java.
+        import java.nio.file.*;
+        import java.nio.Files.*;
+        
+        public class ReadWriteExample
+        {
+          public static void main(String[] args)
+          {
+            Path file_path = "test.txt";
+            String content = "Hello World";
+            byte[] file_content = content.getBytes();
+
+            // Write to file
+            write(file_path, file_content, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+
+            // Read back data
+            byte[] new_content;
+            new_content = Files.readAllBytes(file_path);
+            System.out.println(new_content);
+          }
+        }
+
+  section
+    h2 File Streams
+    p Sometimes you cannot fit a whole file into your memory, in this case you want to use a file streamer.
+    p.fragment There are buffered and unbuffered; we'll just work with buffered right now.
+
+    pre.fragment
+      code.java.
+        Charset charset = Charset.forName("US-ASCII");
+
+        try {
+          BufferedReader reader = Files.newBufferedReader(file, charset);
+          String line = null;
+          while ((line = reader.readLine()) != null) {
+              System.out.println(line);
+          }
+        } catch (IOException x) {
+            System.err.format("IOException: %s%n", x);
+        }
+
+section
+  section
+    h2 Unit Testing
+    p Unit testing allows for a develop to make sure the code's functionality is correct throughout the development process.
+
+  section
+    h2 JUnit
+    p We'll demo JUnit to do out unit testing
+    pre.fragment
+      code.java.
+        import static org.junit.Assert.assertEquals;
+        import org.junit.Test;
+
+        public class MyTests {
+
+          @Test
+          public void multiplicationOfZeroIntegersShouldReturnZero() {
+            MyClass tester = new MyClass(); // MyClass is tested
+
+            // assert statements
+            assertEquals("10 x 0 must be 0", 0, tester.multiply(10, 0));
+            assertEquals("0 x 10 must be 0", 0, tester.multiply(0, 10));
+            assertEquals("0 x 0 must be 0", 0, tester.multiply(0, 0));
+          }
+        }

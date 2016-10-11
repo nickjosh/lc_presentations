@@ -1,0 +1,40 @@
+.ft-section(data-title="Helpful Programs")
+    .ft-page
+        h1 cat
+        p "cat" concattenates files (aka prints them out in order).
+        pre
+            code.language-bash
+                :code
+                    cat /proc/cmdline
+
+    .ft-page
+        h1 cut
+        p "cut" is used to chop up lines of text
+        pre
+            code.language-bash
+                :code
+                    echo "A B C D" | cut -d ' ' -f 1,3
+
+    .ft-page
+        h1 grep
+        p "grep" matches regular expressions and returns lines that match
+        pre
+            code.language-bash
+                :code
+                    echo -e "CAT\nDOG\nCATDOG" | grep 'CAT'
+
+    .ft-page
+        h1 less
+        p "less" pages output so it can be read in a single window (enables scrolling through a file).
+        pre
+            code.language-bash
+                :code
+                    less /SOME/LARGE/FILE
+
+    .ft-page
+        h1 wc
+        p "wc" counts words, lines, and letters
+        pre
+            code.language-bash
+                :code
+                    wc /SOME/LARGE/FILE

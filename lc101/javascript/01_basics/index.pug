@@ -1,0 +1,129 @@
+section
+  h1 Javascript
+  h3 01 - Javascript Basics
+
+section
+  section
+    h2 The Javascript Programming Language
+    p Javascript is standardized by ECMA and is often referred to by it's standards name #[i ECMAScript].
+  section
+    p Javascript was written in 10 days.
+    p.fragment It shows.
+    p.fragment Many qualities of other languages are not implemented in the code but are slowly being added in.
+  section
+    p The Javascript world changes very fast.
+    | Keep this is mind when looking at other code and APIs.
+    | We're going to use #[i ECMAScript5 (ES5)].
+    | The most recent version is #[ES6], but it's adoption is slow.
+
+section
+  h2 Javascript Code Structure
+  p Javascript is divided into blocks enclosed in #[strong curly braces], much like C and Java variants.
+  p.fragment No more indention errors.
+  pre.fragment
+    code.javascript.
+      function() {
+        var abc = 1;
+        return abc;
+      }
+
+section
+  section
+    h2 Varaibles
+    p #[strong Variables] in JS are prefixed with #[i var].
+    p.fragment If you do not prefix it, it will go onto the global namespace, which is bad.
+  section
+    h2 Types
+    dl
+      dt Undefined
+      dd The type given to variables before they're defined.
+
+      dt Null
+      dd Similar to None in Python, expresses a missing value.
+
+      dt Boolean
+      dd true or false.
+
+      dt String
+      dd A sequence of characters.
+
+      dt Number
+      dd A floating point number; can look like an integer.
+
+      dt Object
+      dd An instance of an object. A pseudo mix between a class instance and a python dictionary.
+
+section
+  section
+    h2 Conditionals and Loops
+    p Conditionals and loops are similar to Python's; however, there are a few differences.
+
+  section
+    h2 Conditionals
+    p JS has the standard conditionals
+    pre
+      code.javascript.
+        if (someBool) {
+          // Do something
+        } else if (someOtherBool) {
+          // Do something else
+        } else {
+          // and yet another statement
+        }
+
+  section
+    h2 For Loops
+    p JS's for loops look like C's for loops, which are quite different from Python's.
+    pre
+      code.javascript.
+        for (var i = 0; i < 10; i++) {
+          // Do something 10 times where i is the loop variant
+        }
+
+  section
+    h2 While Loop
+    p JS's while loop is pretty much the same as Pythons
+    pre
+      code.javascript.
+        while(!someVar) {
+          // Do something while someVar isn't true.
+        }
+
+
+  section
+    h2 Switch Statements
+    p JS has switch statments, which are not present in Python.
+    p.fragment
+    pre.fragment
+      code.javascript.
+        switch (someVar) {
+          case 'a':
+            // someVar === 'a'
+            break;
+
+          case 'b':
+            // someVar === 'b'
+            break;
+
+          default:
+            // case if no match
+        }
+
+section
+  h2 Some Differences
+  p Comments begin with #[strong //] or, in block form, being with #[strong /*] and end with #[strong */].
+  p.fragment There is no #[strong not] operator, instead use #[strong !].
+  p.fragment Printing is done via #[strong console.log].
+
+
+section
+  h2 Functions
+  p Functions are basically the same in JS as they were in Python.
+  pre.fragment
+    code.javascript.
+      function someNameForFunc(arg1, arg2) {
+        return "Hello world: " + arg1 + arg2;
+      }
+
+section
+  h1 Studio: Mario

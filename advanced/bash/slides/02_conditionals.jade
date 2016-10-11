@@ -1,0 +1,50 @@
+.ft-section(data-title="Conditionals")
+    .ft-page
+        h1 Conditionals
+        p The "test" command checks for some condition then exits with an exit status corresponding to the exit code.
+        .ft-fragment
+            p To make the shell feel more like a real programming language "[" links to "test".
+                | The two following commands are both return 0 if the directory '/home/schmidmt' exists:
+            pre
+                code.language-bash
+                    :code
+                        test -e '/home/schmidmt'
+                        [ -e '/home/schmidmt' ]
+
+        p.ft-fragment See "man test" for more tests
+
+    .ft-page
+        h1 Return Code
+        p The return code from the last process is stored in the "$?" variable.
+        .ft-fragment
+            p Try the following
+            pre
+                code.language-bash
+                    :code
+                        true; echo $?
+                        false; echo $?
+
+    .ft-page
+        h1 IF
+        p The if statement looks like the following
+        pre
+            code.language-bash
+                :code
+                    if CONDITION; then
+                        OPTION_1
+                    elif ANOTHER_CONDITION; then
+                        OPTION_2
+                    else
+                        OPTION_3
+                    fi
+
+    .ft-page
+        h1 If Example
+        pre
+            code.language-bash
+                :code
+                    if [ "$X" -gt 0 ]; then
+                        echo YAY
+                    else
+                        echo BOO
+                    fi

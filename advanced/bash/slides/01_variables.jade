@@ -1,0 +1,21 @@
+.ft-section(data-title="Variables and the Environment")
+    .ft-page
+        h1 Variables
+        p To set the content of a variable run:
+            pre
+                code.language-bash
+                    :code
+                        variable="HELLO WORLD"
+        p Variables are all accessed with the dollar-sign "$" prefix.
+        p To show the content of a variable run:
+            pre
+                code.language-bash
+                    :code
+                        echo "$variable"
+    .ft-page
+        h1 Removing Variables
+        p To remove a variable call "unset" on it
+            pre
+                code.language-bash
+                    :code
+                        unset variable

@@ -1,0 +1,169 @@
+section
+  h1 Java
+  h3 01 - Java Basics
+  ul
+    li Please fill out the survey on Piazza
+    li Java in middle, JavaScript on the perimeter
+
+section
+  section
+    h2 The Java Programming Language
+    p Java is owned by Oracle (Previously Sun Microsystems)
+
+section
+  h2 Java Code Structure
+  p Java is divided into blocks enclosed in #[strong curly braces], much like C variants.
+  p.fragment No more indention errors.
+  pre.fragment
+    code.java.
+      public class Hello {
+        public static void main(String[] args) {
+          System.out.println("Hello World!");
+        }
+      }
+
+section
+  h2 Main functions
+  p Python doesn't have a main function like many other languages.
+  | In Python, everything in the global scope gets evaluated.
+  | However, in Java, the main function is the entry-point.
+  | It's from this point the program is started.
+
+section
+  section
+    h2 Varaibles
+    p Java is static and strogly typed.
+    | This means each variable can only hold a particular type.
+    | Unlike Python, you cannot reassign a variable from a string to integer.
+
+  section
+    h2 Primitive Types
+    ul
+      li #[strong int]	A 32-bit (4-byte) integer value
+      li #[strong short]	A 16-bit (2-byte) integer value
+      li #[strong long]	A 64-bit (8-byte) integer value
+      li #[strong byte]	An 8-bit (1-byte) integer value
+      li #[strong float]	A 32-bit (4-byte) floating-point value
+      li #[strong double]	A 64-bit (8-byte) floating-point value
+      li #[strong char]	A 16-bit character using the Unicode encoding scheme
+      li #[strong boolean]	A true or false value
+
+  section
+    h2 Non-Primitive Types
+    p Since Java is object oriented, a type can be a class instead of a primitive.
+    | For example, Integer is the class form of int.
+
+section
+  section
+    h2 Conditionals and Loops
+    p Conditionals and loops are similar to Python's; however, there are a few differences.
+
+  section
+    h2 Conditionals
+    p Java has the standard conditionals
+    pre
+      code.java.
+        if (someBool) {
+          // Do something
+        } else if (someOtherBool) {
+          // Do something else
+        } else {
+          // and yet another statement
+        }
+
+  section
+    h2 For Loops
+    p Java's for loops look like C's for loops, which are quite different from Python's.
+    pre
+      code.java.
+        for (Integer i = 0; i < 10; i++) {
+          // Do something 10 times where i is the loop variant
+        }
+
+  section
+    h2 While Loop
+    p JS's while loop is pretty much the same as Pythons
+    pre
+      code.java.
+        while(!someVar) {
+          // Do something while someVar isn't true.
+        }
+
+
+  section
+    h2 Switch Statements
+    p Java has switch statments, which are not present in Python.
+    p.fragment
+    pre.fragment
+      code.java.
+        switch (someVar) {
+          case 'a':
+            // someVar == 'a'
+            break;
+
+          case 'b':
+            // someVar == 'b'
+            break;
+
+          default:
+            // case if no match
+        }
+
+section
+  h2 Classes
+  p Like Python, Java has classes.
+  pre.fragment
+    code.java.
+      public class Fraction {
+
+          private Integer numerator;
+          private Integer denominator;
+
+          public Fraction(Integer num, Integer den) {
+              this.numerator = num;
+              this.denominator = den;
+          }
+
+          public Fraction(Integer num) {
+              this.numerator = num;
+              this.denominator = 1;
+          }
+
+          public Fraction add(Fraction other) {
+              Integer newNum, newDen, common;
+
+              newNum = other.getDenominator()*this.numerator + this.denominator*other.getNumerator();
+              newDen = this.denominator * other.getDenominator();
+              common = gcd(newNum,newDen);
+              return new Fraction(newNum/common, newDen/common );
+          }
+
+          public Fraction add(Integer other) {
+              return add(new Fraction(other));
+          }
+
+          private static Integer gcd(Integer m, Integer n) {
+              while (m % n != 0) {
+                  Integer oldm = m;
+                  Integer oldn = n;
+                  m = oldn;
+                  n = oldm%oldn;
+              }
+              return n;
+          }
+
+          public static void main(String[] args) {
+              Fraction f1 = new Fraction(1,2);
+              Fraction f2 = new Fraction(2,3);
+
+              System.out.println(f1.mul(f2));
+              System.out.println(f1.add(1));
+          }
+
+      }
+
+section
+  h2 Today's Task
+  ol
+    li Install Eclipse
+    li Set up git repo in Eclipse

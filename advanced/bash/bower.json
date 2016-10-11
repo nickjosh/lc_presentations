@@ -1,0 +1,23 @@
+{
+  "name": "launchcode_os",
+  "description": "Presentation for LaunchCode, Operating Systems",
+  "main": "index.js",
+  "authors": [
+    "Mike Schmidt <schmidmt@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Flowtime.js": "flowtime#*",
+    "prism": "^1.4.1"
+  }
+}

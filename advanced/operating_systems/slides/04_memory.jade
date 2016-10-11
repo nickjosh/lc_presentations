@@ -1,0 +1,28 @@
+.ft-section(data-title="Memory")
+    .ft-page
+        h1 Virtualized Memory
+        p.ft-fragment When you use malloc the memory returned is continuous.
+        p.ft-fragment What happens when there isn't a block of continuous memory available?
+    .ft-page
+        .center-stack
+            .centered-stack
+                img(src="img/Virtual_memory.svg", style="height: 700px;")
+
+    .ft-page
+        h1 Inspecting the Memory Map
+        pre
+            code.language-bash
+                | cat /proc/$PID/maps 
+
+    .ft-page
+        h1 Pages
+        p Memory pages the smallest unit of memory which can be managed.
+        .ft-fragment
+            p To get the size on the current system run the following.
+            pre
+                code.language-sh getconf PAGESIZE
+
+    .ft-page
+        h1 Swap
+        p Since you might need more memory than your machine has you can store memory on disk in a file or another block device called swap.
+        p.ft-fragment Disks are slow, memory is fast. Use swap to store programs not running and keep your memory usage below the physical limit.

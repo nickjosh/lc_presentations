@@ -1,0 +1,55 @@
+section
+  h1 Javascript
+  h3 04 - Forms and Input Validation
+
+
+section
+  section
+    h2 Accessing Form Data
+    p If you select and input node in the DOM, you will be able to access it's data from the node's properties.
+    pre.fragment
+      code.html.
+        &lt;input id=&quot;test-input&quot; type=&quot;text&quot; /&gt;
+
+    pre.fragment
+      code.javascript.
+        var elem = document.getElementById('test-input');
+        elem.addEventListener('input', function() {
+          console.log(elem.value);
+        });
+
+    a(href="./get_input_value.html").fragment Example Page
+
+  section
+    h2 Attaching Events
+    p Events handlers can be attached to the element itself or the form.
+    | Each has it particular uses.
+
+    table.fragment
+      thead
+        tr
+          th Event
+          th Use
+      tbody
+        tr
+          td input
+          td Any input on an element.
+        tr
+          td change
+          td Any change on an element, after focus leaves or enter is pressed.
+        tr
+          td submit
+          td When submit is pressed on a form.
+
+  section
+    h2 Form Example
+    p When attaching events on submit you will want to validate the fields and set errors if the fields are invalid.
+    div.fragment
+      p If you want to stop the submit from actually submitting, that is making the post, you need to call:
+      pre
+        code.javascript event.preventDefault()
+
+    a(href="./form_example.html").fragment Example Page
+
+section
+  h2 Studio: Mario 4

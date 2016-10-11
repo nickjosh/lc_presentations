@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      <label for="test-input">Test Input</label>
+      <input id="test-input" type="text" />
+    </form>
+
+    <script type="text/javascript" charset="utf-8">
+      var elem = document.getElementById('test-input');
+      elem.addEventListener('input', function() {
+        console.log(elem.value);
+      });
+    </script>
+
+  </body>
+</html>
