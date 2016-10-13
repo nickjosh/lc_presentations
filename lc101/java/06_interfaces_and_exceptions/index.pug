@@ -1,0 +1,129 @@
+section
+  h1 Java
+  h3 06 - Interfaces and Exceptions
+
+  h4 Announcements
+  ul
+    li Between classes there will be a disucssion of tech résumés.
+
+
+section
+  section
+    h2 Interfaces
+    p.fragment An interface is a set of method signatures which can be used as a type.
+    p.fragment This allows code to expect particular methods to be available on a class.
+
+  section
+    h2 Defining an Interface
+    pre.fragment
+      code.java.
+        public interface Monster {
+          public int getLevel();
+          public int level = 1;
+        }
+    
+        public class Character {
+          private string name;
+
+          public string getName() { return this.name; }
+
+          public Character(string name) { this.name = name; }
+        }
+
+        public static class Gorgon extends Character implements Monster {
+          public int level;
+
+          @Override
+          public int getLevel() { return level; }
+    
+          public Gorgon(string name) {
+            super(name);
+            type = "Gorgon";
+          }
+        }
+
+  section
+    h2 Requiring an Interface
+    pre.fragment
+      code.java.
+        //...
+        public void attack(Monster target) {
+          //...
+        }
+        //...
+
+  section
+    h2 Sorting Example
+    pre.fragment
+      code.java.
+        public class Name implements Comparable<Name>{
+          public string first;
+          public string last;
+
+          public Name(string first, string last) {
+            this.first = first;
+            this.last = last;
+          }
+
+          public int compareTo(Name other) {
+            int primary = this.last.compareTo(other.last);
+            if (primary == 0) {
+              return this.first.compareTo(other.first);
+            }
+            return primary;
+          }
+        }
+
+section
+  section
+    h2 Exceptions
+    p.fragment Exceptions are classes which can be used to carry error and allow for cleaner code.
+    p.fragment Exceptions are #[strong thrown] when an error occurs.
+    p.fragment Exceptions may be #[strong caught] and handled. Uncaught exceptions will cause the program to quit.
+
+  section
+    h2 Exception Lineage
+    img(src="https://www.tutorialspoint.com/java/images/exceptions1.jpg")
+
+  section
+    h2 Example
+    p #[code Integer.parseInt(int)] will throw a #[code NumberFormatException] if the number is not an int.
+    p.fragment #[a(href="https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#parseInt(java.lang.String)", target="_blank") See Docs]
+
+  section
+    h2 Try / Catch Blocks
+    p.fragment #[code try / catch] are statements used to handle exceptions.
+    pre.fragment
+      code.java.
+        try {
+          // Do something that might throw an exception
+        } except (ExcptionClass excpt) {
+          // If an exception implement or inherits
+          // or is an instance of ExceptionClass
+          // This block will execute.
+        } finally {
+          // Will always happen
+          // Use this to close files and the like.
+        }
+
+
+  section
+    h2 Try / Catch Example
+    pre.fragment
+      code.java.
+        string maybeAnInt = "1234";
+        int x;
+        try {
+          x = Integer.parseInt(maybeAnInt);
+        } except (NumberFormatError err) {
+          // Tell the user they messed up or something.
+        }
+
+  section
+    h2 Throwing An Exception
+    pre.fragment
+      code.java.
+        int y = 3;
+        if (y > 2) {
+          throw new YIsTooLarge();
+        }
